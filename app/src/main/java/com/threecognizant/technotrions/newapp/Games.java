@@ -3,12 +3,11 @@ package com.threecognizant.technotrions.newapp;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class Games extends AppCompatActivity {
 
@@ -112,21 +111,27 @@ public class Games extends AppCompatActivity {
         });
 
 
-        ImageButton twozerofoureight = (ImageButton) findViewById(R.id.twozerofoureight);
+        final ImageButton twozerofoureight = (ImageButton) findViewById(R.id.twozerofoureight);
         twozerofoureight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                boolean flag=true;
                 Intent i;
                 PackageManager manager = getPackageManager();
                 try {
-                    i = manager.getLaunchIntentForPackage("com.estoty.game2048");
+                    i = manager.getLaunchIntentForPackage("com.gabriellecirulli.app2048");
                     if (i == null)
                         throw new PackageManager.NameNotFoundException();
                     i.addCategory(Intent.CATEGORY_LAUNCHER);
                     startActivity(i);
                 } catch (PackageManager.NameNotFoundException e) {
-
+                    Toast.makeText(Games.this, "App not installed on device", Toast.LENGTH_SHORT).show();
+                    flag=false;
                 }
+                if(flag){
+                    twozerofoureight.setImageResource(R.drawable.toi);
+                }
+
             }
         });
 

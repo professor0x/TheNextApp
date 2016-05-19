@@ -20,7 +20,7 @@ public class OnlineShopping extends AppCompatActivity {
 
         final ImageButton[] flipkart = {(ImageButton) findViewById(R.id.flipkart)};
         //ImageButton targetonFlipkart;
-        final int[] flag = {1};
+
         flipkart[0].setOnClickListener(new View.OnClickListener() {
             @Override
 
