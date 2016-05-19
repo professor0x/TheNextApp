@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@drawable/whiletravelling"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_while_travelling"
+    tools:context="com.threecognizant.technotrions.newapp.WhileTravelling">
+
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/games"
+        android:scaleType="fitXY"
+        android:src="@drawable/games"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/books"
+        android:layout_toStartOf="@+id/books" />
+
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/books"
+        android:scaleType="fitXY"
+        android:src="@drawable/books"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="         Books"
+        android:id="@+id/textView10"
+        android:layout_below="@+id/books"
+        android:layout_alignLeft="@+id/books"
+        android:layout_alignStart="@+id/books" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="         Games"
+        android:id="@+id/textView11"
+        android:layout_alignRight="@+id/games"
+        android:layout_alignEnd="@+id/games"
+        android:layout_alignTop="@+id/textView10"
+        android:layout_alignLeft="@+id/games"
+        android:layout_alignStart="@+id/games" />
+
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/music"
+        android:scaleType="fitXY"
+        android:src="@drawable/music"
+        android:layout_above="@+id/textView10"
+        android:layout_toRightOf="@+id/books"
+        android:layout_toEndOf="@+id/books" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="         Music"
+        android:id="@+id/textView12"
+        android:layout_alignBottom="@+id/textView10"
+        android:layout_toRightOf="@+id/books"
+        android:layout_toEndOf="@+id/books" />
+
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/message"
+        android:scaleType="fitXY"
+        android:layout_below="@+id/textView10"
+        android:layout_alignLeft="@+id/textView11"
+        android:layout_alignStart="@+id/textView11"
+        android:src="@drawable/message" />
+
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/videos"
+        android:scaleType="fitXY"
+        android:layout_alignBottom="@+id/message"
+        android:layout_toRightOf="@+id/message"
+        android:layout_toEndOf="@+id/message"
+        android:src="@drawable/videos" />
+
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/news"
+        android:scaleType="fitXY"
+        android:layout_alignTop="@+id/videos"
+        android:layout_toRightOf="@+id/videos"
+        android:layout_toEndOf="@+id/videos"
+        android:src="@drawable/news" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="    Messaging"
+        android:id="@+id/textView13"
+        android:layout_below="@+id/message"
+        android:layout_alignLeft="@+id/message"
+        android:layout_alignStart="@+id/message" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="  Videos"
+        android:textColor="#ffffff"
+        android:id="@+id/textView14"
+        android:layout_below="@+id/message"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="        News"
+        android:id="@+id/textView15"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/news"
+        android:layout_toRightOf="@+id/videos"
+        android:layout_toEndOf="@+id/videos" />
+
+</RelativeLayout>

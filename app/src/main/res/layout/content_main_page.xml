@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mainpage"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_main_page" tools:context=".MainPage">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Before Travelling"
+        android:textColor="#ffffff"
+        android:id="@+id/BT"
+        android:background="#00000000"
+        android:layout_marginTop="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="While Travelling"
+        android:textColor="#ffffff"
+        android:id="@+id/WT"
+        android:background="#00000000"
+        android:layout_marginTop="75dp"
+        android:layout_below="@+id/BT"
+        android:layout_alignLeft="@+id/BT"
+        android:layout_alignStart="@+id/BT"
+        android:layout_alignRight="@+id/BT"
+        android:layout_alignEnd="@+id/BT" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="After Reaching"
+        android:textColor="#ffffff"
+        android:id="@+id/AR"
+        android:background="#00000000"
+        android:layout_marginTop="93dp"
+        android:layout_below="@+id/WT"
+        android:layout_alignLeft="@+id/WT"
+        android:layout_alignStart="@+id/WT"
+        android:layout_alignRight="@+id/WT"
+        android:layout_alignEnd="@+id/WT" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Your Travel Companion"
+        android:id="@+id/textView9"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
