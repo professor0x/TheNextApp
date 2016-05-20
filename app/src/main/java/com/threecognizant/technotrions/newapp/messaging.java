@@ -11,65 +11,87 @@ import android.widget.Toast;
 
 public class messaging extends AppCompatActivity {
     int ids[][]; //row is R.id, column is R.drawable
-    ImageButton ibArray[];
+    ImageButton ibArray[], ib2Array[];
     String intentPath[]; //target packages
-
+    int target[];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_messaging);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        target = new int[1];
+        target[0] = 0;
+        ids = new int[4][4];
+        ibArray = new ImageButton[4];
+        ib2Array = ibArray; //backup, since ibArray will continuously change
+        intentPath = new String[4];
 
-        ids=new int[4][4];
-        ibArray=new ImageButton[4];
-        intentPath=new String[4];
+        ids[0][0] = R.id.whatsapp;
+        ids[0][1] = R.drawable.whatsapp;
+        ibArray[0] = (ImageButton) findViewById(ids[0][0]);
+        intentPath[0] = "com.whatsapp";
 
-        ids[0][0]=R.id.whatsapp;
-        ids[0][1]=R.drawable.whatsapp;
-        ibArray[0]=(ImageButton)findViewById(ids[0][0]);
-        intentPath[0]="com.whatsapp";
-
-        ids[2][0]=R.id.hike;
-        ids[2][1]=R.drawable.hike;
-        ibArray[2]=(ImageButton)findViewById(ids[2][0]);
-        intentPath[2]="com.bsb.hike";
+        ids[2][0] = R.id.hike;
+        ids[2][1] = R.drawable.hike;
+        ibArray[2] = (ImageButton) findViewById(ids[2][0]);
+        intentPath[2] = "com.bsb.hike";
 
         //ImageButton whatsapp=(ImageButton)findViewById(R.id.whatsapp);
         ibArray[0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//  while(BACK BUTTON IS NOT PRESSED){//everything inside this block
                 Intent i;
+//                int target=0;
+                int current = 0;
+                boolean changed[] = new boolean[4];
 
-                boolean changed[]=new boolean[4];
-                PackageManager manager = getPackageManager();
-                try {
-                    i = manager.getLaunchIntentForPackage(intentPath[0]);
-                    if (i == null)
-                        throw new PackageManager.NameNotFoundException();
 
-                    Toast.makeText(messaging.this, ibArray[0].getDrawable().toString(), Toast.LENGTH_LONG).show();
-                    Toast.makeText(messaging.this, Integer.toString(ids[0][1]), Toast.LENGTH_LONG).show();
+                String mew = ibArray[0].toString();
+                String currApp = mew.substring(mew.lastIndexOf('/') + 1, mew.length() - 1);
+                Toast.makeText(messaging.this, currApp, Toast.LENGTH_LONG).show();
 
-//                    if (ibArray[0].getDrawable().toString().equalsIgnoreCase(Integer.toString(ids[0][1]))) {
-                    if(!changed[0]){
+                if (currApp.equalsIgnoreCase("whatsapp")) {
+                    try {
+                        PackageManager manager = getPackageManager();
+                        i = manager.getLaunchIntentForPackage(intentPath[target[0]]);
+                        if (i == null)
+                            throw new PackageManager.NameNotFoundException();
                         i.addCategory(Intent.CATEGORY_LAUNCHER);
                         startActivity(i);
-                        ibArray[0].setImageResource(ids[2][1]);
-                        changed[0]=true;
+
+                    } catch (PackageManager.NameNotFoundException e) {
+                        Toast.makeText(messaging.this, "App not installed on device", Toast.LENGTH_SHORT).show();
+
+                    } finally {
+                        target[0] = 2;
+                        ids[current][0] = ids[target[0]][0];
+                        ids[current][1] = ids[target[0]][1];
                     }
-                } catch (PackageManager.NameNotFoundException e) {
-                    Toast.makeText(messaging.this, "App not installed on device", Toast.LENGTH_SHORT).show();
-
                 }
-                if (changed[0]) {
+                if (currApp.equalsIgnoreCase("hike")) {
+                    try {
+                        PackageManager manager = getPackageManager();
+                        i = manager.getLaunchIntentForPackage(intentPath[target[0]]);
+                        if (i == null)
+                            throw new PackageManager.NameNotFoundException();
+                        i.addCategory(Intent.CATEGORY_LAUNCHER);
+                        startActivity(i);
 
-                    ImageButton i2 = (ImageButton) findViewById(ids[2][0]);
-                    changed[2]=true;
-                    i2.setImageResource(ids[0][1]);
+                    } catch (PackageManager.NameNotFoundException e) {
+                        Toast.makeText(messaging.this, "App not installed on device", Toast.LENGTH_SHORT).show();
+
+                    } finally {
+                        target[0] = 0;
+                        ids[current][0] = ids[target[0]][0];
+                        ids[current][1] = ids[target[0]][1];
+                    }
                 }
+                ibArray[current].setImageResource(ids[target[0]][1]);
             }
-        });
+            }
+        );
     }
 
 }
