@@ -119,7 +119,7 @@ public class Games extends AppCompatActivity {
                 Intent i;
                 PackageManager manager = getPackageManager();
                 try {
-                    i = manager.getLaunchIntentForPackage("com.gabriellecirulli.app2048");
+                    i = manager.getLaunchIntentForPackage("com.gabrielecirulli.app2048");
                     if (i == null)
                         throw new PackageManager.NameNotFoundException();
                     i.addCategory(Intent.CATEGORY_LAUNCHER);
