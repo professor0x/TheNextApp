@@ -2,6 +2,7 @@ package com.threecognizant.technotrions.newapp;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -31,7 +32,9 @@ public class Games extends AppCompatActivity {
                     i.addCategory(Intent.CATEGORY_LAUNCHER);
                     startActivity(i);
                 } catch (PackageManager.NameNotFoundException e) {
-
+                    i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse("market://details?id=com.rovio.angrybirds"));
+                    startActivity(i);
                 }
             }
         });
