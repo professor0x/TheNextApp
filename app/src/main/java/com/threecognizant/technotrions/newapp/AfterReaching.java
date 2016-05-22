@@ -121,7 +121,84 @@ public class AfterReaching extends AppCompatActivity implements ResourceArray {
                 }
             });
         }
-
+        temp = ibArray[target[1]].toString();
+        temp = temp.substring(temp.lastIndexOf('/') + 1, temp.length() - 1);
+        if (temp.equalsIgnoreCase(appName[1])) {
+            //Toast.makeText(AfterReaching.this, "OLA matches", Toast.LENGTH_SHORT).show();
+            ibArray[1].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i;
+                    PackageManager manager = getPackageManager();
+                    try {
+                        i = manager.getLaunchIntentForPackage(intentPath[target[1]]);
+                        if (i == null)
+                            throw new PackageManager.NameNotFoundException();
+                        i.addCategory(Intent.CATEGORY_LAUNCHER);
+                        startActivity(i);
+                    } catch (PackageManager.NameNotFoundException e) {
+                        i = new Intent(Intent.ACTION_VIEW);
+                        i.setData(Uri.parse("market://details?id=" + intentPath[target[1]]));
+                        startActivity(i);
+                    }
+                   /* finally {
+                        target[0]=target[1];
+                    }*/
+                }
+            });
+        }
+        temp = ibArray[target[2]].toString();
+        temp = temp.substring(temp.lastIndexOf('/') + 1, temp.length() - 1);
+        if (temp.equalsIgnoreCase(appName[2])) {
+            //Toast.makeText(AfterReaching.this, "OLA matches", Toast.LENGTH_SHORT).show();
+            ibArray[2].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i;
+                    PackageManager manager = getPackageManager();
+                    try {
+                        i = manager.getLaunchIntentForPackage(intentPath[target[2]]);
+                        if (i == null)
+                            throw new PackageManager.NameNotFoundException();
+                        i.addCategory(Intent.CATEGORY_LAUNCHER);
+                        startActivity(i);
+                    } catch (PackageManager.NameNotFoundException e) {
+                        i = new Intent(Intent.ACTION_VIEW);
+                        i.setData(Uri.parse("market://details?id=" + intentPath[target[2]]));
+                        startActivity(i);
+                    }
+                   /* finally {
+                        target[0]=target[1];
+                    }*/
+                }
+            });
+        }
+        temp = ibArray[target[3]].toString();
+        temp = temp.substring(temp.lastIndexOf('/') + 1, temp.length() - 1);
+        if (temp.equalsIgnoreCase(appName[3])) {
+            //Toast.makeText(AfterReaching.this, "OLA matches", Toast.LENGTH_SHORT).show();
+            ibArray[3].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i;
+                    PackageManager manager = getPackageManager();
+                    try {
+                        i = manager.getLaunchIntentForPackage(intentPath[target[3]]);
+                        if (i == null)
+                            throw new PackageManager.NameNotFoundException();
+                        i.addCategory(Intent.CATEGORY_LAUNCHER);
+                        startActivity(i);
+                    } catch (PackageManager.NameNotFoundException e) {
+                        i = new Intent(Intent.ACTION_VIEW);
+                        i.setData(Uri.parse("market://details?id=" + intentPath[target[3]]));
+                        startActivity(i);
+                    }
+                   /* finally {
+                        target[0]=target[1];
+                    }*/
+                }
+            });
+        }
         final Button updateButton = (Button) findViewById(R.id.updateButton);
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,86 +207,141 @@ public class AfterReaching extends AppCompatActivity implements ResourceArray {
                 temp = ibArray[target[0]].toString();
                 temp = temp.substring(temp.lastIndexOf('/') + 1, temp.length() - 1);
                 Toast.makeText(AfterReaching.this, temp, Toast.LENGTH_SHORT).show();
-                //new, new, new, new
+                //new, new, new, zombie
                 if (appName[0].equalsIgnoreCase(temp)) {
                     Toast.makeText(AfterReaching.this, "ola,makemytrip", Toast.LENGTH_SHORT).show();
-                    target[0] = target[1];
+                    int temp = 0;
                     //new
+                    target[0] = target[1];
                     ibArray[0].setImageResource(ids[1][1]);
                     //new
+                    target[1] = target[2];
                     ibArray[1].setImageResource(ids[2][1]);
                     //new
+                    target[2] = target[3];
                     ibArray[2].setImageResource(ids[3][1]);
-                    //new
-                    ibArray[3].setImageResource(ids[0][1]);
+                    //zombie
+                    target[3] = temp;
+                    ibArray[3].setImageResource(ids[temp][1]);
                 }
                 //next, new, new, zombie
                 else if (appName[1].equalsIgnoreCase(temp)) {
+                    for (int i = 0; i < 7; i++) {
+                        target[i] = i;
+                    }
                     Toast.makeText(AfterReaching.this, "makemytrip,oyo", Toast.LENGTH_SHORT).show();
-                    target[0] = target[2];
+                    int temp = 0;
+                    /*//new
+                    target[2] = target[1];
+                    ibArray[2].setImageResource(ids[1][1]);
+                    //new
+                    target[1] = target[3];
+                    ibArray[1].setImageResource(ids[3][1]);
+                    //zombie
+                    target[3] = target[0];
+                    ibArray[3].setImageResource(ids[0][1]);
                     //next
+                    target[0] = target[2];
+                    ibArray[0].setImageResource(ids[2][1]);*/
+
+                    //next
+                    target[0] = target[2];
                     ibArray[0].setImageResource(ids[2][1]);
                     //new
-                    ibArray[1].setImageResource(ids[3][1]);
-                    //new
+                    target[2] = target[1];
                     ibArray[2].setImageResource(ids[1][1]);
+                    //new
+                    target[1] = target[3];
+                    ibArray[1].setImageResource(ids[3][1]);
                     //zombie
-                    ibArray[3].setImageResource(ids[0][1]);
+                    target[3] = temp;
+                    ibArray[3].setImageResource(ids[temp][1]);
+
                 }
                 //next, new, zombie, popular
                 else if (appName[2].equalsIgnoreCase(temp)) {
+                    for (int i = 0; i < 7; i++) {
+                        target[i] = i;
+                    }
                     Toast.makeText(AfterReaching.this, "oyo,packpoint", Toast.LENGTH_SHORT).show();
-                    target[0] = target[3];
+                    int temp = 0;
                     //next
+                    target[0] = target[3];
                     ibArray[0].setImageResource(ids[3][1]);
-                    //new
-                    ibArray[1].setImageResource(ids[4][1]);
-                    //zombie
+                    //zombie unchanged
+                    target[2] = target[2];
                     ibArray[2].setImageResource(ids[2][1]);
+                    //new
+                    target[1] = target[4];
+                    ibArray[1].setImageResource(ids[4][1]);
                     //popular
-                    ibArray[3].setImageResource(ids[0][1]);
+                    target[3] = temp;
+                    ibArray[3].setImageResource(ids[temp][1]);
+
                 }
                 //next, new, zombie, popular
                 else if (appName[3].equalsIgnoreCase(temp)) {
+                    for (int i = 0; i < 7; i++) {
+                        target[i] = i;
+                    }
                     Toast.makeText(AfterReaching.this, "packpoint,tripadvisor", Toast.LENGTH_SHORT).show();
-                    target[0] = target[4];
+                    int temp = 0;
+                    //zombie
+                    target[2] = target[3];
+                    ibArray[2].setImageResource(ids[3][1]);
                     //next
+                    target[0] = target[4];
                     ibArray[0].setImageResource(ids[4][1]);
                     //new
+                    target[1] = target[5];
                     ibArray[1].setImageResource(ids[5][1]);
-                    //zombie
-                    ibArray[2].setImageResource(ids[3][1]);
                     //popular
-                    ibArray[3].setImageResource(ids[0][1]);
+                    target[3] = temp;
+                    ibArray[3].setImageResource(ids[temp][1]);
 
                 }
                 //next, new, zombie, popular
                 else if (appName[4].equalsIgnoreCase(temp)) {
+                    for (int i = 0; i < 7; i++) {
+                        target[i] = i;
+                    }
                     Toast.makeText(AfterReaching.this, "tripadvisor,flipkart", Toast.LENGTH_SHORT).show();
-                    target[0] = target[5];
+                    int temp = 0;
+                    //zombie
+                    target[2] = target[4];
+                    ibArray[2].setImageResource(ids[4][1]);
                     //next
+                    target[0] = target[5];
                     ibArray[0].setImageResource(ids[5][1]);
                     //new
+                    target[1] = target[6];
                     ibArray[1].setImageResource(ids[6][1]);
-                    //zombie
-                    ibArray[2].setImageResource(ids[4][1]);
                     //popular
-                    ibArray[3].setImageResource(ids[0][1]);
+                    target[3] = temp;
+                    ibArray[3].setImageResource(ids[temp][1]);
+
                 }
                 //next, zombie, popular, popular2
                 else if (appName[5].equalsIgnoreCase(temp)) {
+                    for (int i = 0; i < 7; i++) {
+                        target[i] = i;
+                    }
                     Toast.makeText(AfterReaching.this, "flipkart,mysmartprice", Toast.LENGTH_SHORT).show();
-                    target[0] = target[6];
+                    int temp = 0;
+                    //zombie
+                    target[2] = target[4];
+                    ibArray[2].setImageResource(ids[4][1]);
                     //next
+                    target[0] = target[6];
                     ibArray[0].setImageResource(ids[6][1]);
                     //new
+                    target[1] = target[5];
                     ibArray[1].setImageResource(ids[5][1]);
-                    //zombie
-                    ibArray[2].setImageResource(ids[0][1]);
                     //popular
-                    ibArray[3].setImageResource(ids[0][1]);
-                } else {
-                    ;
+                    target[3] = temp;
+                    ibArray[3].setImageResource(ids[temp][1]);
+
+
                 }
             }
         });
