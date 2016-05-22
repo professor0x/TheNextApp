@@ -35,13 +35,13 @@ public class MainPage extends AppCompatActivity {
             }
         });
 
-        Button AR = (Button) findViewById(R.id.AR);
+        /*Button AR = (Button) findViewById(R.id.AR);
         AR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainPage.this, AfterReaching.class));
             }
-        });
+        });*/
     }
 
     @Override
