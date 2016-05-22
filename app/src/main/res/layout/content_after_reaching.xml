@@ -18,40 +18,52 @@
     <ImageButton
 
         android:id="@+id/ola"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_alignTop="@+id/makemytrip"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="15dp"
+        android:background="#ffffff"
         android:scaleType="fitXY"
         android:src="@drawable/ola" />
 
     <ImageButton
 
         android:id="@+id/makemytrip"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_alignParentTop="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
         android:layout_toEndOf="@+id/ola"
         android:layout_toRightOf="@+id/ola"
+        android:background="#ffffff"
         android:scaleType="fitXY"
         android:src="@drawable/makemytrip" />
 
     <ImageButton
         android:id="@+id/oyo"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_alignParentTop="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
         android:layout_toEndOf="@+id/makemytrip"
         android:layout_toRightOf="@+id/makemytrip"
+        android:background="#ffffff"
         android:scaleType="fitXY"
         android:src="@drawable/oyo" />
 
     <ImageButton
         android:id="@+id/packpoint"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_alignParentTop="true"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignTop="@+id/oyo"
         android:layout_toEndOf="@+id/oyo"
         android:layout_toRightOf="@+id/oyo"
+        android:background="#ffffff"
         android:scaleType="fitXY"
         android:src="@drawable/packpoint" />
 
@@ -62,6 +74,7 @@
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/packpoint"
         android:layout_toRightOf="@+id/packpoint"
+        android:background="#ffffff"
         android:scaleType="fitXY"
         android:src="@drawable/tripadvisor" />
 
@@ -72,6 +85,7 @@
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/tripadvisor"
         android:layout_toRightOf="@+id/tripadvisor"
+        android:background="#ffffff"
         android:scaleType="fitXY"
         android:src="@drawable/flipkart" />
 
@@ -82,6 +96,7 @@
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/flipkart"
         android:layout_toRightOf="@+id/flipkart"
+        android:background="#ffffff"
         android:scaleType="fitXY"
         android:src="@drawable/mysmartprice" />
 
