@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -13,30 +16,83 @@
     tools:showIn="@layout/activity_after_reaching">
 
     <ImageButton
+
         android:id="@+id/ola"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignTop="@+id/uber"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignTop="@+id/makemytrip"
         android:scaleType="fitXY"
         android:src="@drawable/ola" />
 
     <ImageButton
-        android:id="@+id/uber"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+
+        android:id="@+id/makemytrip"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/ola"
         android:layout_toRightOf="@+id/ola"
         android:scaleType="fitXY"
-        android:src="@drawable/uber" />
+        android:src="@drawable/makemytrip" />
 
-    <!--<ImageButton
-        android:id="@+id/twozerofoureight"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignTop="@+id/subwaysurfer"
-        android:layout_toEndOf="@+id/subwaysurfer"
-        android:layout_toRightOf="@+id/subwaysurfer"
+    <ImageButton
+        android:id="@+id/oyo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/makemytrip"
+        android:layout_toRightOf="@+id/makemytrip"
         android:scaleType="fitXY"
-        android:src="@drawable/twozerofoureight" />-->
+        android:src="@drawable/oyo" />
+
+    <ImageButton
+        android:id="@+id/packpoint"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/oyo"
+        android:layout_toRightOf="@+id/oyo"
+        android:scaleType="fitXY"
+        android:src="@drawable/packpoint" />
+
+    <ImageButton
+        android:id="@+id/tripadvisor"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/packpoint"
+        android:layout_toRightOf="@+id/packpoint"
+        android:scaleType="fitXY"
+        android:src="@drawable/tripadvisor" />
+
+    <ImageButton
+        android:id="@+id/flipkart"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/tripadvisor"
+        android:layout_toRightOf="@+id/tripadvisor"
+        android:scaleType="fitXY"
+        android:src="@drawable/flipkart" />
+
+    <ImageButton
+        android:id="@+id/mysmartprice"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/flipkart"
+        android:layout_toRightOf="@+id/flipkart"
+        android:scaleType="fitXY"
+        android:src="@drawable/mysmartprice" />
+
+    <Button
+        android:id="@+id/updateButton"
+        android:layout_width="160dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/ola"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/update" />
+
+
 </RelativeLayout>
