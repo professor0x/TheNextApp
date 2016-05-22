@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainPage extends AppCompatActivity {
 
@@ -59,6 +60,7 @@ public class MainPage extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Toast.makeText(MainPage.this, "Upcoming!", Toast.LENGTH_SHORT).show();
             return true;
         }
 

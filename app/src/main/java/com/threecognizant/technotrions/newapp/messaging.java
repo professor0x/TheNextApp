@@ -10,7 +10,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class messaging extends AppCompatActivity {
-    int ids[][]; //row is R.id, column is R.drawable
+    int ids[][]; //column1 is R.id, column2 is R.drawable
     ImageButton ibArray[], ib2Array[];
     String intentPath[]; //target packages
     int target[];
@@ -22,7 +22,7 @@ public class messaging extends AppCompatActivity {
         setSupportActionBar(toolbar);
         target = new int[1];
         target[0] = 0;
-        ids = new int[4][4];
+        ids = new int[4][2];
         ibArray = new ImageButton[4];
         ib2Array = ibArray; //backup, since ibArray will continuously change
         intentPath = new String[4];
@@ -37,13 +37,10 @@ public class messaging extends AppCompatActivity {
         ibArray[2] = (ImageButton) findViewById(ids[2][0]);
         intentPath[2] = "com.bsb.hike";
 
-        //ImageButton whatsapp=(ImageButton)findViewById(R.id.whatsapp);
         ibArray[0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//  while(BACK BUTTON IS NOT PRESSED){//everything inside this block
                 Intent i;
-//                int target=0;
                 int current = 0;
                 boolean changed[] = new boolean[4];
 
