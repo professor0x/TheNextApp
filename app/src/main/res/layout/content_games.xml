@@ -40,4 +40,13 @@
         android:layout_toRightOf="@+id/subwaysurfer"
         android:scaleType="fitXY"
         android:src="@drawable/twozerofoureight" />
+
+    <Button
+        android:id="@+id/updateButton"
+        android:layout_width="160dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/subwaysurfer"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/update" />
 </RelativeLayout>
