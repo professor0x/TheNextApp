@@ -7,8 +7,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 public class Games extends AppCompatActivity {
 
@@ -30,30 +30,11 @@ public class Games extends AppCompatActivity {
                     if (i == null)
                         throw new PackageManager.NameNotFoundException();
                     i.addCategory(Intent.CATEGORY_LAUNCHER);
-                    startActivity(i);
                 } catch (PackageManager.NameNotFoundException e) {
                     i = new Intent(Intent.ACTION_VIEW);
                     i.setData(Uri.parse("market://details?id=com.rovio.angrybirds"));
-                    startActivity(i);
                 }
-            }
-        });
-
-        ImageButton angrybirdsrio = (ImageButton) findViewById(R.id.angrybirdsrio);
-        angrybirdsrio.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i;
-                PackageManager manager = getPackageManager();
-                try {
-                    i = manager.getLaunchIntentForPackage("com.rovio.angrybirdsrio");
-                    if (i == null)
-                        throw new PackageManager.NameNotFoundException();
-                    i.addCategory(Intent.CATEGORY_LAUNCHER);
-                    startActivity(i);
-                } catch (PackageManager.NameNotFoundException e) {
-
-                }
+                startActivity(i);
             }
         });
 
@@ -69,56 +50,19 @@ public class Games extends AppCompatActivity {
                     if (i == null)
                         throw new PackageManager.NameNotFoundException();
                     i.addCategory(Intent.CATEGORY_LAUNCHER);
-                    startActivity(i);
                 } catch (PackageManager.NameNotFoundException e) {
-
+                    i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse("market://details?id=com.kiloo.subwaysurf"));
                 }
+                startActivity(i);
             }
         });
-
-        ImageButton fruitninja = (ImageButton) findViewById(R.id.fruitninja);
-        fruitninja.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i;
-                PackageManager manager = getPackageManager();
-                try {
-                    i = manager.getLaunchIntentForPackage(" com.halfbrick.fruitninjafree");
-                    if (i == null)
-                        throw new PackageManager.NameNotFoundException();
-                    i.addCategory(Intent.CATEGORY_LAUNCHER);
-                    startActivity(i);
-                } catch (PackageManager.NameNotFoundException e) {
-
-                }
-            }
-        });
-
-
-        ImageButton jetpackjoyride = (ImageButton) findViewById(R.id.jetpackjoyride);
-        jetpackjoyride.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i;
-                PackageManager manager = getPackageManager();
-                try {
-                    i = manager.getLaunchIntentForPackage("com.halfbrick.jetpackjoyride");
-                    if (i == null)
-                        throw new PackageManager.NameNotFoundException();
-                    i.addCategory(Intent.CATEGORY_LAUNCHER);
-                    startActivity(i);
-                } catch (PackageManager.NameNotFoundException e) {
-
-                }
-            }
-        });
-
 
         final ImageButton twozerofoureight = (ImageButton) findViewById(R.id.twozerofoureight);
         twozerofoureight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                boolean flag=true;
+                boolean flag = true;
                 Intent i;
                 PackageManager manager = getPackageManager();
                 try {
@@ -126,38 +70,69 @@ public class Games extends AppCompatActivity {
                     if (i == null)
                         throw new PackageManager.NameNotFoundException();
                     i.addCategory(Intent.CATEGORY_LAUNCHER);
+                    /*Bundle b = new Bundle();
+                    i.putExtras(b);*/
+//                    startActivityForResult(i, 0);
                     startActivity(i);
+                    /*finish();*/
                 } catch (PackageManager.NameNotFoundException e) {
-                    Toast.makeText(Games.this, "App not installed on device", Toast.LENGTH_SHORT).show();
-                    flag=false;
-                }
-                if(flag){
-                    twozerofoureight.setImageResource(R.drawable.toi);
+                    i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse("market://details?id=com.gabrielecirulli.app2048"));
+                    flag = false;
                 }
 
+
+                /*if (flag) {
+                    //twozerofoureight.setImageResource(R.drawable.toi);
+                    i = new Intent(Games.this, news.class);
+                    startActivity(i);
+                }*/
+                /*Intent BackpressedIntent = new Intent();
+                BackpressedIntent.setClass(getApplicationContext(), news.class);
+                BackpressedIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(BackpressedIntent);
+                finish();*/
             }
         });
 
-
-        ImageButton minimilitia = (ImageButton) findViewById(R.id.minimilitia);
-        minimilitia.setOnClickListener(new View.OnClickListener() {
+        final Button updateButton = (Button) findViewById(R.id.updateButton);
+        updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent i;
-                PackageManager manager = getPackageManager();
-                try {
-                    i = manager.getLaunchIntentForPackage("com.appsomniacs.da2");
-                    if (i == null)
-                        throw new PackageManager.NameNotFoundException();
-                    i.addCategory(Intent.CATEGORY_LAUNCHER);
-                    startActivity(i);
-                } catch (PackageManager.NameNotFoundException e) {
+            public void onClick(View v) {
 
-                }
+                //setContentView(R.layout.activity_games);/*
+                //ibArray[3]=ibArray[0];
+
+                /*ibArray[0].setImageResource(R.drawable.makemytrip);
+                ibArray[1].setImageResource(R.drawable.oyo);
+                ibArray[2].setImageResource(R.drawable.packpoint);
+                ibArray[3].setImageResource(R.drawable.ola);*/
+                //ibArray[1].setForeground(ibArray[0].getDrawable());
+                finish();
+                Intent i = new Intent(Games.this, messaging.class);
+                startActivity(i);
             }
         });
-
-
     }
-
 }
+
+    /*@Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        //super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==0){
+            Toast.makeText(Games.this, "Req Code is 0", Toast.LENGTH_SHORT).show();
+//            if(resultCode==RESULT_OK){
+                Intent i = new Intent(Games.this, news.class);
+                startActivity(i);
+//            }
+        }
+    }*/
+
+    /*@Override
+    public void onActivityReenter(int resultCode, Intent data) {
+        //super.onActivityReenter(resultCode, data);
+//            if (resultCode == RESULT_OK) {
+                //Intent i = new Intent(Games.this, news.class);
+                startActivity(data);
+//            }
+    }*/
