@@ -4,10 +4,10 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -199,10 +199,10 @@ public class BeforeTravelling extends AppCompatActivity{
                 }
             });
         }
-        final Button updateButton = (Button) findViewById(R.id.updateButton);
-        updateButton.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
 
                 temp = ibArray[target[0]].toString();
                 temp = temp.substring(temp.lastIndexOf('/') + 1, temp.length() - 1);
@@ -231,19 +231,6 @@ public class BeforeTravelling extends AppCompatActivity{
                     }
                     Toast.makeText(BeforeTravelling.this, "makemytrip,oyo", Toast.LENGTH_SHORT).show();
                     int temp = 0;
-                    /*//new
-                    target[2] = target[1];
-                    ibArray[2].setImageResource(ids[1][1]);
-                    //new
-                    target[1] = target[3];
-                    ibArray[1].setImageResource(ids[3][1]);
-                    //zombie
-                    target[3] = target[0];
-                    ibArray[3].setImageResource(ids[0][1]);
-                    //next
-                    target[0] = target[2];
-                    ibArray[0].setImageResource(ids[2][1]);*/
-
                     //next
                     target[0] = target[2];
                     ibArray[0].setImageResource(ids[2][1]);
