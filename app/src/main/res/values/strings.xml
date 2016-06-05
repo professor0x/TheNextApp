@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Launch</string>
+    <string name="app_name">The Next App</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_before_travelling">BeforeTravelling</string>
     <string name="title_activity_while_travelling">WhileTravelling</string>
