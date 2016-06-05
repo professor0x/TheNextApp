@@ -7,6 +7,7 @@
     android:layout_centerHorizontal="true"
     android:layout_centerVertical="true"
 
+    android:background="@drawable/backgroundgraphics"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -17,97 +18,172 @@
 
     <ImageButton
 
-        android:id="@+id/ola"
+        android:id="@+id/new1"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_alignTop="@+id/makemytrip"
+        android:layout_alignTop="@+id/senior1"
         android:layout_marginBottom="10dp"
-        android:layout_marginLeft="5dp"
+        android:layout_marginLeft="0dp"
         android:layout_marginRight="15dp"
-        android:background="#ffffff"
+        android:background="#f4f2e6"
         android:scaleType="fitXY"
         android:src="@drawable/ola" />
 
     <ImageButton
+        android:id="@+id/new2"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignLeft="@+id/new1"
+        android:layout_alignStart="@+id/new1"
+        android:layout_below="@+id/new1"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp"
+        android:background="#f4f2e6"
+        android:scaleType="fitXY"
+        android:src="@drawable/uber" />
 
-        android:id="@+id/makemytrip"
+    <ImageButton
+        android:id="@+id/new3"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignLeft="@+id/new2"
+        android:layout_alignStart="@+id/new2"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="0dp"
+        android:background="#f4f2e6"
+        android:scaleType="fitXY"
+        android:src="@drawable/redbus" />
+
+    <ImageButton
+
+        android:id="@+id/senior1"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_alignParentTop="true"
         android:layout_marginBottom="10dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="10dp"
-        android:layout_toEndOf="@+id/ola"
-        android:layout_toRightOf="@+id/ola"
-        android:background="#ffffff"
+        android:layout_toRightOf="@+id/new1"
+        android:background="#f4f2e6"
         android:scaleType="fitXY"
         android:src="@drawable/makemytrip" />
 
     <ImageButton
-        android:id="@+id/oyo"
+        android:id="@+id/senior2"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_alignParentTop="true"
+        android:layout_alignTop="@+id/new2"
         android:layout_marginRight="15dp"
-        android:layout_marginTop="10dp"
-        android:layout_toEndOf="@+id/makemytrip"
-        android:layout_toRightOf="@+id/makemytrip"
-        android:background="#ffffff"
+        android:layout_toRightOf="@+id/new2"
+        android:background="#f4f2e6"
+        android:scaleType="fitXY"
+        android:src="@drawable/cleartrip" />
+
+    <ImageButton
+        android:id="@+id/senior3"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignLeft="@+id/senior2"
+        android:layout_alignTop="@+id/new3"
+        android:layout_marginRight="15dp"
+        android:layout_toRightOf="@+id/new3"
+        android:background="#f4f2e6"
+        android:scaleType="fitXY"
+        android:src="@drawable/irctc" />
+
+    <!--&#45;&#45;&#45;&#45;&#45;&#45;-->
+
+    <ImageButton
+        android:id="@+id/supersenior1"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignLeft="@+id/supersenior2"
+        android:layout_alignStart="@+id/supersenior2"
+        android:layout_alignTop="@+id/senior1"
+        android:layout_marginRight="15dp"
+        android:layout_toRightOf="@+id/senior1"
+        android:background="#f4f2e6"
         android:scaleType="fitXY"
         android:src="@drawable/oyo" />
 
     <ImageButton
-        android:id="@+id/packpoint"
+        android:id="@+id/supersenior2"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_alignTop="@+id/oyo"
-        android:layout_toEndOf="@+id/oyo"
-        android:layout_toRightOf="@+id/oyo"
-        android:background="#ffffff"
+        android:layout_alignTop="@+id/senior2"
+        android:layout_marginRight="15dp"
+        android:layout_toRightOf="@+id/senior2"
+        android:background="#f4f2e6"
         android:scaleType="fitXY"
-        android:src="@drawable/packpoint" />
+        android:src="@drawable/touristeye" />
 
     <ImageButton
-        android:id="@+id/tripadvisor"
+        android:id="@+id/supersenior3"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignTop="@+id/senior3"
+        android:layout_marginRight="15dp"
+        android:layout_toRightOf="@+id/senior3"
+        android:background="#f4f2e6"
+        android:scaleType="fitXY"
+        android:src="@drawable/stayzilla" />
+
+    <ImageButton
+        android:id="@+id/zombie1"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignTop="@+id/senior1"
+        android:layout_toRightOf="@+id/supersenior1"
+        android:background="#f4f2e6"
+        android:scaleType="fitXY" />
+
+
+    <ImageButton
+        android:id="@+id/zombie2"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignLeft="@+id/zombie1"
+        android:layout_alignStart="@+id/zombie1"
+        android:layout_alignTop="@+id/senior2"
+        android:layout_toRightOf="@+id/supersenior2"
+        android:background="#f4f2e6"
+        android:scaleType="fitXY" />
+
+    <ImageButton
+        android:id="@+id/zombie3"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignLeft="@+id/zombie2"
+        android:layout_alignStart="@+id/zombie2"
+        android:layout_alignTop="@+id/senior3"
+        android:layout_toRightOf="@+id/supersenior3"
+        android:background="#f4f2e6"
+        android:scaleType="fitXY" />
+
+    <ImageButton
+        android:id="@+id/next4"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/packpoint"
-        android:layout_toRightOf="@+id/packpoint"
-        android:background="#ffffff"
-        android:scaleType="fitXY"
-        android:src="@drawable/tripadvisor" />
+        android:background="#f4f2e6"
+        android:scaleType="fitXY" />
 
     <ImageButton
-        android:id="@+id/flipkart"
+        android:id="@+id/next5"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/tripadvisor"
-        android:layout_toRightOf="@+id/tripadvisor"
-        android:background="#ffffff"
-        android:scaleType="fitXY"
-        android:src="@drawable/flipkart" />
+        android:layout_below="@+id/new1"
+        android:background="#f4f2e6"
+        android:scaleType="fitXY" />
 
     <ImageButton
-        android:id="@+id/mysmartprice"
+        android:id="@+id/next6"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/flipkart"
-        android:layout_toRightOf="@+id/flipkart"
-        android:background="#ffffff"
-        android:scaleType="fitXY"
-        android:src="@drawable/mysmartprice" />
-
-    <!-- <Button
-         android:id="@+id/updateButton"
-         android:layout_width="160dp"
-         android:layout_height="80dp"
-         android:layout_below="@+id/ola"
-         android:layout_centerHorizontal="true"
-         android:layout_centerVertical="true"
-         android:text="@string/update" />-->
-
-
+        android:background="#f4f2e6"
+        android:scaleType="fitXY" />
 </RelativeLayout>
